@@ -19,15 +19,10 @@ with the date the photo was taken. The first console.log should return the follo
 
 */
 
-window.alert(flickerObj[title]);
 
-for( title in flickerObj){
-  console.log(flickerObj[title]);
-  for(date_taken in flickerObj[title]){
- console.log(flickerObj[date_taken]);
-  }
+for( var i =0 ; i<flickerObj.length; i++){
+  console.log(flickerObj.items[i].title + flickerObj.items[i].date_taken);
 }
-
 
 
 
@@ -37,7 +32,7 @@ for( title in flickerObj){
 var links= [];
 
 for ( link in flickerObj) {
-  links.push(flickerObj[link]);
+  links.push(flickerObj.items.link);
 }
 
 /*
@@ -47,5 +42,4 @@ Did it create a valid JSON string?
 for (var i = 0; i < links.length; i++) {
   JSON.stringify(links[i]);
   console.log(links[i]);
-
-// }
+ }
